@@ -40,12 +40,16 @@ function App() {
       </form>
       <footer className="flex flex-col items-center mt-4 gap-1">
         <Text size="sm" className="text-text-secundary">This is a design system example</Text>
-        <a href="https://amandavmanduca.github.io/react-design-system/" target="_blank" className="underline text-text-secundary">
-          <Text size="sm" className="text-text-secundary hover:text-text-primary">Check out the Storybook docs</Text>
-        </a>
-        <a href="https://www.figma.com/file/JHuG4Yjup5sLf8KSxA7Wfr/Design-System?node-id=0%3A1" target="_blank" className="underline text-text-secundary">
-          <Text size="sm" className="text-text-secundary hover:text-text-primary">Check out the Figma docs</Text>
-        </a>
+        <Text size="sm" asChild className="text-text-secundary hover:text-text-primary underline">
+          <a href="https://amandavmanduca.github.io/react-design-system/" target="_blank">
+            Check out the Storybook docs
+          </a>
+        </Text>
+        <Text size="sm" asChild className="text-text-secundary hover:text-text-primary underline">
+          <a href="https://www.figma.com/file/JHuG4Yjup5sLf8KSxA7Wfr/Design-System?node-id=0%3A1" target="_blank">
+            Check out the Figma docs
+          </a>
+        </Text>
       </footer>
     </div>
   )
