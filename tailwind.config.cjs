@@ -13,11 +13,21 @@ module.exports = {
       '2xl': 32,
     },
     colors: {
-      'primary-text-color': '#FAFAFA',
-      'secundary-text-color': '#7c7c8a',
-      'primary-color': '#202024',
-      'dark-background-color': '#121214',
-      'secundary-color': '#adadcd',
+      transparent: 'transparent',
+      black: '#000',
+      white: '#FFF',
+
+      text: {
+        primary: '#FAFAFA',
+        secundary: '#7c7c8a'
+      },
+
+      primary: '#202024',
+      secundary: '#adadcd',
+
+      background: {
+        dark: '#121214'
+      }
     },
     extend: {
       fontFamily: {

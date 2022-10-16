@@ -2,21 +2,21 @@ import clsx from "clsx";
 
 export interface TextProps {
     size?: 'sm' | 'md' | 'lg',
-    text: string;
+    children: React.ReactNode;
 }
 
-export function Text({ size = 'md', text }: TextProps) {
+export function Text({ size = 'md', children }: TextProps) {
     return (
         <span className="bg-dark-background-color">
             <p className={clsx(
-                'text-primary-text-color font-sans',
+                'text-text-primary font-sans',
                 {
                     'text-xs': size === 'sm',
                     'text-sm': size === 'md',
                     'text-md': size === 'lg',
                 }
             )}>
-                {text}
+                {children}
             </p>
         </span>
     )
