@@ -6,13 +6,20 @@ import { TextInput } from "../../components/TextInput"
 import { Envelope, Lock } from 'phosphor-react'
 import { FormEvent } from "react"
 import React from "react"
+import axios from "axios"
 
 function SignIn() {
-  const [isUserSignedIn, setIsUserSignedIn] = React.useState(false)
+  const [isUserSignedIn, setIsUserSignedIn] = React.useState(false);
+
   function handleSignIn(event: FormEvent) {
     event.preventDefault()
-    setIsUserSignedIn(true)
+    const [email, password]: any = event.target
+    axios.post('/session', {
+      email: email?.value,
+      password: password?.value,
+    }).then(() => setIsUserSignedIn(true))
   }
+
   return (
     <div className="flex-col w-screen h-screen bg-background-dark flex items-center justify-center text-text-primary">
       <header className="flex flex-col items-center">
@@ -26,7 +33,7 @@ function SignIn() {
               <TextInput.Icon>
                 <Envelope />
               </TextInput.Icon>
-              <TextInput.Input type="email" placeholder="Your e-mail" />
+              <TextInput.Input name="email" type="email" placeholder="Your e-mail" />
           </TextInput.Root>
         </label>
         <label htmlFor="password" className="flex flex-col gap-3">
@@ -35,7 +42,7 @@ function SignIn() {
               <TextInput.Icon>
                 <Lock />
               </TextInput.Icon>
-              <TextInput.Input type="password" placeholder="********" /> 
+              <TextInput.Input name="password" type="password" placeholder="********" /> 
           </TextInput.Root>
         </label>
         <label htmlFor="check" className="flex items-center gap-2">
